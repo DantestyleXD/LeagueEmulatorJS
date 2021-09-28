@@ -7,7 +7,7 @@ class DeathMinion extends DeathUnit {
 		return this.parent.character.exp;
 	}
 	get Gold(){
-		return this.parent.character.gold + this.parent.character.goldPer90 * parseInt(global.Game.Timer / 90);
+		return this.parent.character.gold + this.parent.character.goldPer90 * parseInt(global.Game.Timer() / 90);
 	}
 
 }
