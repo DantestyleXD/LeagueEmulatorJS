@@ -10,7 +10,7 @@ const respawnTimes = [
 class DeathPlayer extends DeathUnit {
 
 	get respawnTime(){
-		return respawnTimes[this.parent.stats.Level];
+		return respawnTimes[this.parent.stats.Level - 1];
 	}
 	Exp = 0;
 	KillDeathCounter = 0;
