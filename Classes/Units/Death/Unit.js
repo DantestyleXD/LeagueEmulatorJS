@@ -5,14 +5,15 @@ class DeathUnit {
 
 	constructor(parent){
 		this.parent = parent;
-
-		this.respawnTime = ConstantsUnit[this.parent.info.type]?.respawnTime || false;
+		
+		if( !this.respawnTime )
+			this.respawnTime = ConstantsUnit[this.parent.info.type]?.respawnTime || 0;
 	}
 
-	respawnTime = 0;
+	/*respawnTime = 0;
 	totalRespawnTime = 0;
 	Exp = 0;
-	Gold = 0;
+	Gold = 0;*/
 	
 }
 

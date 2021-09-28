@@ -33,6 +33,10 @@ class BattleUnit {
 	}
 	died = false;
 	onDie(source){
+		source.parent.stats.expUp( this.parent.death.Exp )
+		source.parent.stats.Gold += this.parent.death.Gold
+		
+		//debugger;
 		// override
 	}
 	distanceTo(target){
