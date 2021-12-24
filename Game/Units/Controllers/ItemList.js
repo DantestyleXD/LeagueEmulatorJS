@@ -1,4 +1,3 @@
-
 var ItemList = {
 	1001: class Item { //Boots of Speed		
 		id = 1001		
@@ -1136,6 +1135,7 @@ var ItemList = {
 				Flat:0.1
 			}
 		}
+		static SPELLS = [ 'Avarice' ]
 	},
 	3096: class Item { //Nomad's Medallion		
 		id = 3096		

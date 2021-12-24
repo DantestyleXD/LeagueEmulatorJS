@@ -1,8 +1,7 @@
 const { createPacket } = require("../../../Core/PacketUtilities");
 const ItemList = require("./ItemList");
-const ItemSpells = require("./ItemSpells")
-const UndoHistory = require('./UndoHistory')
-
+const ItemSpells = require("../../Spells/Items/ItemSpells");
+const UndoHistory = require('./UndoHistory');
 
 var ItemSlots = 6;// 0-5
 var TrinketSlot = 6;
@@ -18,6 +17,7 @@ class Inventory {
     }
 	Items = {};
 	itemsToRemove = [];
+	itemSpells = {};
 
 	getReuseSlot(itemId){ // * -> I don't like this but actually work... probably I will take look about this soon
 
@@ -103,6 +103,9 @@ class Inventory {
 		}
 		else
 			this.UndoHistory.addUndoHistory(itemId, slot, 1);
+
+		if( Item.SPELLS )
+			this.addItemSpelltoPlayer( Item )
 	}
 	getEffectiveGoldCost(item){
 
@@ -200,6 +203,25 @@ class Inventory {
 
 		this.parent.stats.charStats_send();
 	}
+	addItemSpelltoPlayer( item ){
+		item.SPELLS.forEach( spell => {
+			if( !this.itemSpells[ spell ] )
+			{
+				this.itemSpells[ spell ] = new ItemSpells[ spell ]
+				if( this.itemSpells[ spell ].onAdd )
+					this.itemSpells[ spell ].onAdd( this.parent )
+			}
+		})
+	}
+	removeItemSpelltoPlayer( item ){
+
+	}
+	/*activateItemSpellonBuy( item ){
+
+	}
+	deactivateItemSpellonRemove( item ){
+		
+	}*/
 }
 
 module.exports = Inventory;
