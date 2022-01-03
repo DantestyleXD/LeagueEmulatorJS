@@ -1,21 +1,32 @@
-/*[
-    "Alacrity", "Avarice", 
-    "Awe", "Butcher", 
-    "Captain", "Cleave", 
-    "Cold Steel", "Distortion", 
-    "Enhanced Movement", "Eyes of Pain", 
-    "Favor", "Furor", 
-    "Homeguard", "Icy", 
-    "Incinerate", "Insight", 
-    "Lifeline", "Maim", 
-    "Mana Charge", "Mana Font", 
-    "Mementos of the Hunt", "Point Runner", 
-    "Prospector", "Rage", 
-    "Sapping Barbs", "Spellblade", 
-    "Spirit Drain", "Spoils of War", 
-    "Tenacity", "Trap Detection", 
-    "Tribute", "Valor's Reward", 
-    "Ward Refresh"
+/*
+Actives:
+[
+	"Ghost Ward","Mana Shield",
+	"Crescent","Hunter's Sight",
+	"Bonetooth Totem","Hunter's Ward",
+	"Hunt","Sweeping Lens",
+	"Scrying"
+]
+
+Passives:
+[
+	"Enhanced Movement","Prospector",
+	"Butcher","Ward Refresh",
+	"Point Runner","Mana Charge",
+	"Slow Resist","Valor's Reward",
+	"Icy","Spellblade",
+	"Mana Font","Insight",
+	"Awe","Rage",
+	"Favor","Cleave",
+	"Cold Steel","Tribute",
+	"Greed","Spoils of War",
+	"Maim","Tenacity",
+	"Eyes of Pain","Lifeline",
+	"Trap Detection","Mementos of the Hunt",
+	"Sapping Barbs","Conservation",
+	"Homeguard","Captain",
+	"Furor","Distortion",
+	"Alacrity"
 ]*/
 
 const events = require('./Utilities/events.js');
