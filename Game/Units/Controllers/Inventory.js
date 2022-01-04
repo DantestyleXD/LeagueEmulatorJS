@@ -94,8 +94,6 @@ class Inventory {
 		if(ItemList[itemId].stats)
 			this.parent.stats.increaseStats(ItemList[itemId].stats);
 
-		this.parent.stats.charStats_send();
-
 		if(this.itemsToRemove.length)
 		{
 			this.Items[slot].itemsRemoved = this.itemsToRemove;
@@ -106,6 +104,8 @@ class Inventory {
 
 		if( Item.SPELLS )
 			this.addItemSpelltoPlayer( Item )
+
+		this.parent.stats.charStats_send();
 	}
 	getEffectiveGoldCost(item){
 

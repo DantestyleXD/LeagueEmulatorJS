@@ -11,10 +11,20 @@ var ItemList = {
 	1004: class Item { //Faerie Charm		
 		id = 1004		
 		static GoldCost = 180
+		static stats = {
+			ManaRegeneration:{
+				Percent: 0.25
+			}
+		}
 	},
 	1006: class Item { //Rejuvenation Bead		
 		id = 1006		
 		static GoldCost = 180
+		static stats = {
+			HealthRegeneration:{
+				Percent: 0.5
+			}
+		}
 	},
 	1011: class Item { //Giant's Belt		
 		id = 1011		
@@ -403,6 +413,9 @@ var ItemList = {
 		static stats = {
 			HealthPoints:{
 				Flat:180
+			},
+			HealthRegeneration:{
+				Percent:1
 			}
 		}
 	},
@@ -417,6 +430,9 @@ var ItemList = {
 		static stats = {
 			Armor:{
 				Flat:30
+			},
+			HealthRegeneration:{
+				Percent:1
 			}
 		}
 	},
@@ -463,6 +479,9 @@ var ItemList = {
 			},
 			AbilityPower:{
 				Flat:60
+			},
+			ManaRegeneration:{
+				Percent:0.5
 			}
 		}
 	},
@@ -476,6 +495,9 @@ var ItemList = {
 			},
 			AttackDamage:{
 				Flat:25
+			},
+			ManaRegeneration:{
+				Percent:0.25
 			}
 		}
 	},
@@ -486,8 +508,8 @@ var ItemList = {
 		static stats = {
 			Armor:{
 				Flat:45
-		},
-		CriticalChance:{
+			},
+			CriticalChance:{
 				Flat:0.15
 			}
 		}
@@ -515,6 +537,9 @@ var ItemList = {
 			},
 			AbilityPower:{
 				Flat:60
+			},
+			ManaRegeneration:{
+				Percent:0.5
 			}
 		}
 	},
@@ -528,6 +553,9 @@ var ItemList = {
 			},
 			AttackDamage:{
 				Flat:25
+			},
+			ManaRegeneration:{
+				Percent:0.25
 			}
 		}
 	},
@@ -561,6 +589,9 @@ var ItemList = {
 		static stats = {
 			MoveSpeed:{
 				Flat:45
+			},
+			MagicPenetration:{
+				Flat:15
 			}
 		}
 	},
@@ -588,6 +619,9 @@ var ItemList = {
 			},
 			MoveSpeed:{
 				Percent:0.06
+			},
+			CooldownReduction:{
+				Percent:0.1
 			}
 		}
 	},
@@ -617,6 +651,9 @@ var ItemList = {
 			},
 			AbilityPower:{
 				Flat:30
+			},
+			CooldownReduction:{
+				Percent:0.1
 			}
 		}
 	},
@@ -656,6 +693,9 @@ var ItemList = {
 		static stats = {
 			MagicResist:{
 				Flat:25
+			},
+			ManaRegeneration:{
+				Percent:0.5
 			}
 		}
 	},
@@ -709,6 +749,9 @@ var ItemList = {
 			},
 			AbilityPower:{
 				Flat:60
+			},
+			ManaRegeneration:{
+				Percent:0.5
 			}
 		}
 	},
@@ -732,6 +775,9 @@ var ItemList = {
 			},
 			AttackDamage:{
 				Flat:25
+			},
+			ManaRegeneration:{
+				Percent:0.25
 			}
 		}
 	},
@@ -745,6 +791,9 @@ var ItemList = {
 			},
 			AttackDamage:{
 				Flat:25
+			},
+			ManaRegeneration:{
+				Percent:0.25
 			}
 		}
 	},
@@ -801,6 +850,9 @@ var ItemList = {
 			},
 			AbilityPower:{
 				Flat:60
+			},
+			ManaRegeneration:{
+				Percent:0.5
 			}
 		}
 	},
@@ -811,6 +863,9 @@ var ItemList = {
 		static stats = {
 			HealthPoints:{
 				Flat:250
+			},
+			CooldownReduction:{
+				Percent:0.2
 			}
 		}
 	},
@@ -825,6 +880,9 @@ var ItemList = {
 			},
 			Armor:{
 				Flat:50
+			},
+			HealthRegeneration:{
+				Percent:1
 			}
 		}
 	},
@@ -855,6 +913,9 @@ var ItemList = {
 			},
 			MagicResist:{
 				Flat:20
+			},
+			CooldownReduction:{
+				Percent:0.1
 			}
 		}
 	},
@@ -868,6 +929,12 @@ var ItemList = {
 			},
 			MagicResist:{
 				Flat:55
+			},
+			CooldownReduction:{
+				Percent:0.1
+			},
+			HealthRegeneration:{
+				Percent:1
 			}
 		}
 	},
@@ -899,6 +966,11 @@ var ItemList = {
 		static GoldCost = 2100
 		static from = [ 3096, 3114 ]
 		active = true
+		static stats = {
+			HealthRegeneration:{
+				Percent:1
+			}
+		}
 	},
 	3070: class Item { //Tear of the Goddess		
 		id = 3070		
@@ -907,6 +979,9 @@ var ItemList = {
 		static stats = {
 			ManaPoints:{
 				Flat:250
+			},
+			ManaRegeneration:{
+				Percent:0.25
 			}
 		}
 	},
@@ -920,6 +995,9 @@ var ItemList = {
 			},
 			AttackDamage:{
 				Flat:50
+			},
+			CooldownReduction:{
+				Percent:0.1
 			}
 		}
 	},
@@ -940,6 +1018,9 @@ var ItemList = {
 		static stats = {
 			ManaPoints:{
 				Flat:250
+			},
+			ManaRegeneration:{
+				Percent:0.25
 			}
 		}
 	},
@@ -954,6 +1035,9 @@ var ItemList = {
 			},
 			LifeSteal:{
 				Percent:0.12
+			},
+			HealthRegeneration:{
+				Percent:1
 			}
 		}
 	},
@@ -975,6 +1059,9 @@ var ItemList = {
 		static stats = {
 			AttackDamage:{
 				Flat:40
+			},
+			HealthRegeneration:{
+				Percent:1
 			}
 		}
 	},
@@ -1123,6 +1210,9 @@ var ItemList = {
 		static stats = {
 			AbilityPower:{
 				Flat:50
+			},
+			ManaRegeneration:{
+				Percent:0.5
 			}
 		}
 	},
@@ -1142,6 +1232,11 @@ var ItemList = {
 		static GoldCost = 865
 		static from = [ 3301 ]
 		active = true
+		static stats = {
+			HealthRegeneration:{
+				Percent:0.25
+			}
+		}
 	},
 	3097: class Item { //Targon's Brace		
 		id = 3097		
@@ -1150,6 +1245,9 @@ var ItemList = {
 		static stats = {
 			HealthPoints:{
 				Flat:175
+			},
+			HealthRegeneration:{
+				Percent:0.5
 			}
 		}
 	},
@@ -1161,6 +1259,9 @@ var ItemList = {
 		static stats = {
 			AbilityPower:{
 				Flat:10
+			},
+			ManaRegeneration:{
+				Percent:0.5
 			}
 		}
 	},
@@ -1200,6 +1301,9 @@ var ItemList = {
 			},
 			MagicResist:{
 				Flat:55
+			},
+			HealthRegeneration:{
+				Percent:1
 			}
 		}
 	},
@@ -1259,6 +1363,9 @@ var ItemList = {
 			},
 			Armor:{
 				Flat:100
+			},
+			CooldownReduction:{
+				Percent:0.2
 			}
 		}
 	},
@@ -1274,6 +1381,7 @@ var ItemList = {
 				Flat:25
 			}
 		}
+		static SPELLS = [ 'EnhancedMovement', 'Tenacity' ]
 	},
 	3112: class Item { //Orb of Winter		
 		id = 3112		
@@ -1282,6 +1390,9 @@ var ItemList = {
 		static stats = {
 			MagicResist:{
 				Flat:70
+			},
+			HealthRegeneration:{
+				Percent:1
 			}
 		}
 	},
@@ -1299,6 +1410,11 @@ var ItemList = {
 		id = 3114		
 		static GoldCost = 600
 		static from = [ 1004, 1004 ]
+		static stats = {
+			ManaRegeneration:{
+				Percent:0.6
+			}
+		}
 	},
 	3115: class Item { //Nashor's Tooth		
 		id = 3115		
@@ -1383,6 +1499,9 @@ var ItemList = {
 		static stats = {
 			AbilityPower:{
 				Flat:120
+			},
+			CooldownReduction:{
+				Percent:0.1
 			}
 		}
 	},
@@ -1436,6 +1555,9 @@ var ItemList = {
 			},
 			MagicResist:{
 				Flat:45
+			},
+			CooldownReduction:{
+				Percent:0.1
 			}
 		}
 	},
@@ -1485,6 +1607,9 @@ var ItemList = {
 			},
 			CriticalChance:{
 				Flat:0.15
+			},
+			CooldownReduction:{
+				Percent:0.1
 			}
 		}
 	},
@@ -1563,6 +1688,9 @@ var ItemList = {
 		static stats = {
 			AbilityPower:{
 				Flat:80
+			},
+			CooldownReduction:{
+				Percent:0.1
 			}
 		}
 	},
@@ -1681,6 +1809,9 @@ var ItemList = {
 		static stats = {
 			AbilityPower:{
 				Flat:80
+			},
+			ManaRegeneration:{
+				Percent:1
 			}
 		}
 	},
@@ -1723,6 +1854,7 @@ var ItemList = {
 				Flat:50
 			}
 		}
+		static SPELLS = [ 'Tenacity' ]
 	},
 	3171: class Item { //Bonetooth Necklace		
 		id = 3171		
@@ -1743,6 +1875,9 @@ var ItemList = {
 			},
 			AttackSpeedMultiplier:{
 				Percent:0.5
+			},
+			CooldownReduction:{
+				Percent:0.1
 			}
 		}
 	},
@@ -1756,6 +1891,9 @@ var ItemList = {
 			},
 			MagicResist:{
 				Flat:25
+			},
+			ManaRegeneration:{
+				Percent:0.5
 			}
 		}
 	},
@@ -1838,6 +1976,9 @@ var ItemList = {
 			},
 			Armor:{
 				Flat:25
+			},
+			CooldownReduction:{
+				Percent:0.2
 			}
 		}
 	},
@@ -1849,6 +1990,9 @@ var ItemList = {
 		static stats = {
 			AbilityPower:{
 				Flat:80
+			},
+			CooldownReduction:{
+				Percent:0.1
 			}
 		}
 	},
@@ -1863,6 +2007,9 @@ var ItemList = {
 			},
 			MagicResist:{
 				Flat:20
+			},
+			CooldownReduction:{
+				Percent:0.1
 			}
 		}
 	},
@@ -1890,6 +2037,11 @@ var ItemList = {
 			AbilityPower:{
 				Flat:20
 			}
+			/*
+			AbilityPowerPerLevel:{
+				Flat:4
+			}
+			*/
 		}
 	},
 	3197: class Item { //The Hex Core mk-2		
@@ -1903,6 +2055,11 @@ var ItemList = {
 			AbilityPower:{
 				Flat:40
 			}
+			/*
+			AbilityPowerPerLevel:{
+				Flat:5
+			}
+			*/
 		}
 	},
 	3198: class Item { //Perfect Hex Core		
@@ -1916,11 +2073,23 @@ var ItemList = {
 			AbilityPower:{
 				Flat:60
 			}
+			/*
+			AbilityPowerPerLevel:{
+				Flat:6
+			}
+			*/
 		}
 	},
 	3200: class Item { //Prototype Hex Core		
 		id = 3200		
 		static GoldCost = 0
+		/*
+		static stats = {
+			AbilityPowerPerLevel:{
+				Flat:3
+			}
+		}
+		*/
 	},
 	3204: class Item { //Quill Coat		
 		id = 3204		
@@ -1951,6 +2120,9 @@ var ItemList = {
 		static stats = {
 			AbilityPower:{
 				Flat:50
+			},
+			CooldownReduction:{
+				Percent:0.1
 			}
 		}
 	},
@@ -1965,6 +2137,12 @@ var ItemList = {
 			},
 			Armor:{
 				Flat:20
+			},
+			CooldownReduction:{
+				Percent:0.1
+			},
+			HealthPoints:{
+				Percent:0.25
 			}
 		}
 	},
@@ -1979,6 +2157,12 @@ var ItemList = {
 			},
 			Armor:{
 				Flat:20
+			},
+			CooldownReduction:{
+				Percent:0.1
+			},
+			HealthPoints:{
+				Percent:0.25
 			}
 		}
 	},
@@ -1989,6 +2173,9 @@ var ItemList = {
 		static stats = {
 			AttackDamage:{
 				Flat:30
+			},
+			CooldownReduction:{
+				Percent:0.1
 			}
 		}
 	},
@@ -2013,6 +2200,12 @@ var ItemList = {
 		static stats = {
 			MagicResist:{
 				Flat:40
+			},
+			ManaRegeneration:{
+				Percent:1
+			},
+			CooldownReduction:{
+				Percent:0.1
 			}
 		}
 	},
@@ -2080,6 +2273,7 @@ var ItemList = {
 				Percent:0.25
 			}
 		}
+		static SPELLS = [ 'Alacrity' ]
 	},
 	3255: class Item { //Enchantment: Homeguard		
 		id = 3255		
@@ -2130,6 +2324,7 @@ var ItemList = {
 				Flat:45
 			}
 		}
+		static SPELLS = [ 'Alacrity' ]
 	},
 	3260: class Item { //Enchantment: Homeguard		
 		id = 3260		
@@ -2195,6 +2390,7 @@ var ItemList = {
 				Flat:45
 			}
 		}
+		static SPELLS = [ 'Alacrity' ]
 	},
 	3265: class Item { //Enchantment: Homeguard		
 		id = 3265		
@@ -2260,6 +2456,7 @@ var ItemList = {
 				Flat:25
 			}
 		}
+		static SPELLS = [ 'Alacrity' ]
 	},
 	3270: class Item { //Enchantment: Homeguard		
 		id = 3270		
@@ -2310,6 +2507,7 @@ var ItemList = {
 				Flat:105
 			}
 		}
+		static SPELLS = [ 'Alacrity' ]
 	},
 	3275: class Item { //Enchantment: Homeguard		
 		id = 3275		
@@ -2360,6 +2558,7 @@ var ItemList = {
 				Flat:45
 			}
 		}
+		static SPELLS = [ 'Alacrity' ]
 	},
 	3280: class Item { //Enchantment: Homeguard		
 		id = 3280		
@@ -2410,6 +2609,7 @@ var ItemList = {
 				Flat:60
 			}
 		}
+		static SPELLS = [ 'Alacrity' ]
 	},
 	3290: class Item { //Twin Shadows		
 		id = 3290		
@@ -2422,12 +2622,20 @@ var ItemList = {
 			},
 			MoveSpeed:{
 				Percent:0.06
+			},
+			CooldownReduction:{
+				Percent:0.1
 			}
 		}
 	},
 	3301: class Item { //Ancient Coin		
 		id = 3301		
 		static GoldCost = 365
+		static stats = {
+			ManaRegeneration:{
+				Percent: 0.25
+			}
+		}
 	},
 	3302: class Item { //Relic Shield		
 		id = 3302		
@@ -2444,6 +2652,9 @@ var ItemList = {
 		static stats = {
 			AbilityPower:{
 				Flat:5
+			},
+			ManaRegeneration:{
+				Percent: 0.25
 			}
 		}
 	},
@@ -2505,7 +2716,10 @@ var ItemList = {
 		static from = [ 3097, 3067 ]
 		static stats = {
 			HealthPoints:{
-				Flat:500
+				Flat: 500
+			},
+			HealthRegeneration:{
+				Percent: 1
 			}
 		}
 	},
@@ -2670,6 +2884,9 @@ var ItemList = {
 		static stats = {
 			AbilityPower:{
 				Flat:40
+			},
+			ManaRegeneration:{
+				Percent:1
 			}
 		}
 	},
@@ -2683,6 +2900,9 @@ var ItemList = {
 			},
 			LifeSteal:{
 				Percent:0.1
+			},
+			CooldownReduction:{
+				Percent: 0.1
 			}
 		}
 	},
@@ -2700,21 +2920,57 @@ var ItemList = {
 		id = 3707		
 		static GoldCost = 2250
 		static from = [ 3706, 3134 ]
+		static stats = {
+			AttackDamage:{
+				Flat: 45
+			},
+			CooldownReduction:{
+				Percent: 0.1
+			},
+			ArmorPenetration:{
+				Flat: 10
+			}
+		}
 	},
 	3708: class Item { //Enchantment: Magus		
 		id = 3708		
 		static GoldCost = 2250
 		static from = [ 3706, 3108 ]
+		static stats = {
+			AbilityPower:{
+				Flat: 80
+			},
+			CooldownReduction:{
+				Percent: 0.2
+			}
+		}
 	},
 	3709: class Item { //Enchantment: Juggernaut		
 		id = 3709		
 		static GoldCost = 2250
 		static from = [ 3706, 3067, 1028 ]
+		static stats = {
+			HealthPoints:{
+				Flat: 500
+			},
+			CooldownReduction:{
+				Percent: 0.1
+			}
+		}
+		static SPELLS = [ 'Tenacity' ]
 	},
 	3710: class Item { //Enchantment: Devourer		
 		id = 3710		
 		static GoldCost = 2250
 		static from = [ 3706, 1042, 1042 ]
+		static stats = {
+			AttackSpeed:{
+				Percent:0.5
+			},
+			/*Magic Damage on Hit:{
+				Flat: 40
+			}*/
+		}
 	},
 	3711: class Item { //Poacher's Knife		
 		id = 3711		
@@ -2730,6 +2986,17 @@ var ItemList = {
 		id = 3714		
 		static GoldCost = 2250
 		static from = [ 3715, 3134 ]
+		static stats = {
+			AttackDamage:{
+				Flat: 45
+			},
+			CooldownReduction:{
+				Percent: 0.1
+			},
+			ArmorPenetration:{
+				Flat: 10
+			}
+		}
 	},
 	3715: class Item { //Skirmisher's Sabre		
 		id = 3715		
@@ -2740,55 +3007,153 @@ var ItemList = {
 		id = 3716		
 		static GoldCost = 2250
 		static from = [ 3715, 3108 ]
+		static stats = {
+			AbilityPower:{
+				Flat: 80
+			},
+			CooldownReduction:{
+				Percent: 0.2
+			}
+		}
 	},
 	3717: class Item { //Enchantment: Juggernaut		
 		id = 3717		
 		static GoldCost = 2250
 		static from = [ 3715, 3067, 1028 ]
+		static stats = {
+			HealthPoints:{
+				Flat: 500
+			},
+			CooldownReduction:{
+				Percent: 0.1
+			}
+		}
+		static SPELLS = [ 'Tenacity' ]
 	},
 	3718: class Item { //Enchantment: Devourer		
 		id = 3718		
 		static GoldCost = 2250
 		static from = [ 3715, 1042, 1042 ]
+		static stats = {
+			AttackSpeed:{
+				Percent:0.5
+			},
+			/*Magic Damage on Hit:{
+				Flat: 40
+			}*/
+		}
 	},
 	3719: class Item { //Enchantment: Warrior		
 		id = 3719		
 		static GoldCost = 2250
 		static from = [ 3711, 3134 ]
+		static stats = {
+			AttackDamage:{
+				Flat: 45
+			},
+			CooldownReduction:{
+				Percent: 0.1
+			},
+			ArmorPenetration:{
+				Flat: 10
+			}
+		}
 	},
 	3720: class Item { //Enchantment: Magus		
 		id = 3720		
 		static GoldCost = 2250
 		static from = [ 3711, 3108 ]
+		static stats = {
+			AbilityPower:{
+				Flat: 80
+			},
+			CooldownReduction:{
+				Percent: 0.2
+			}
+		}
 	},
 	3721: class Item { //Enchantment: Juggernaut		
 		id = 3721		
 		static GoldCost = 2250
 		static from = [ 3711, 3067, 1028 ]
+		static stats = {
+			HealthPoints:{
+				Flat: 500
+			},
+			CooldownReduction:{
+				Percent: 0.1
+			}
+		}
+		static SPELLS = [ 'Tenacity' ]
+		
 	},
 	3722: class Item { //Enchantment: Devourer		
 		id = 3722		
 		static GoldCost = 2250
 		static from = [ 3711, 1042, 1042 ]
+		static stats = {
+			AttackSpeed:{
+				Percent:0.5
+			},
+			/*Magic Damage on Hit:{
+				Flat: 40
+			}*/
+		}
 	},
 	3723: class Item { //Enchantment: Warrior		
 		id = 3723		
 		static GoldCost = 2250
 		static from = [ 3713, 3134 ]
+		static stats = {
+			AttackDamage:{
+				Flat: 45
+			},
+			CooldownReduction:{
+				Percent: 0.1
+			},
+			ArmorPenetration:{
+				Flat: 10
+			}
+		}
 	},
 	3724: class Item { //Enchantment: Magus		
 		id = 3724		
 		static GoldCost = 2250
 		static from = [ 3713, 3108 ]
+		static stats = {
+			AbilityPower:{
+				Flat: 80
+			},
+			CooldownReduction:{
+				Percent: 0.2
+			}
+		}
 	},
 	3725: class Item { //Enchantment: Juggernaut		
 		id = 3725		
 		static GoldCost = 2250
 		static from = [ 3713, 3067, 1028 ]
+		static stats = {
+			HealthPoints:{
+				Flat: 500
+			},
+			CooldownReduction:{
+				Percent: 0.1
+			}
+		}
+		static SPELLS = [ 'Tenacity' ]
 	},
 	3726: class Item { //Enchantment: Devourer		
 		id = 3726		
 		static GoldCost = 2250
+		static stats = {
+			AttackSpeed:{
+				Percent:0.5
+			},
+			/*Magic Damage on Hit:{
+				Flat: 40
+			}*/
+		}
 		static from = [ 3713, 1042, 1042 ]
 	},
 	3800: class Item { //Righteous Glory		
@@ -2802,6 +3167,9 @@ var ItemList = {
 			},
 			ManaPoints:{
 				Flat:300
+			},
+			HealthRegeneration:{
+				Percent:1
 			}
 		}
 	},
@@ -2812,6 +3180,9 @@ var ItemList = {
 		static stats = {
 			HealthPoints:{
 				Flat:200
+			},
+			HealthRegeneration:{
+				Percent:0.5
 			}
 		}
 	}

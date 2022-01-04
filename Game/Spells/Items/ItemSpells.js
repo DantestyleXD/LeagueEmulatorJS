@@ -30,9 +30,11 @@ Passives:
 ]
 */
 
-const events = require('./Utilities/events.js');
+// TIPS: "effect" object inside the item (item.json) it's the correct value
+// for unique passives without name
 
-const percentage = ( number, per ) => { return ( number / 100 ) * per }
+const events = require('./Utilities/events.js');
+const UTILS  = require('./Utilities/functions.js');
 
 var ItemSpells = {
 	// Actives
@@ -96,7 +98,6 @@ var ItemSpells = {
 		static spellHash = 0;
 		onAdd( parent ) {
 			parent.stats.MoveSpeed.FlatBonus += 20;
-			parent.stats.charStats_send();
 		}
 	},
 	Avarice: class ItemSpell {
@@ -118,8 +119,7 @@ var ItemSpells = {
 		static spellHash = 0;
 		onAdd( parent ){
 			var playerManaTotal = parent.stats.ManaPoints.total();
-			parent.stats.AttackDamage.FlatBonus += percentage( playerManaTotal, 2);
-			parent.stats.charStats_send();
+			parent.stats.AttackDamage.FlatBonus += UTILS.percentage( playerManaTotal, 2);
 		}
 	},
     Butcher: class ItemSpell {
@@ -168,7 +168,6 @@ var ItemSpells = {
 		static spellHash = 0;
 		onAdd( parent ) {
 			parent.stats.MagicPenetration.FlatBonus += 15;
-			parent.stats.charStats_send();
 		}
 	},
 	Favor: class ItemSpell {
@@ -210,9 +209,8 @@ var ItemSpells = {
     Insight: class ItemSpell {
 		static spellHash = 0;
 		onAdd( parent ){
-			var playerManaTotal = parent.stats.ManaPoints.total();
-			parent.stats.AbilityPower.FlatBonus += percentage( playerManaTotal, 2);
-			parent.stats.charStats_send();
+			var playerManaTotal = parent.stats.ManaPoints.Total();
+			parent.stats.AbilityPower.FlatBonus += UTILS.percentage( playerManaTotal, 2);
 		}
 	},
 	Lifeline: class ItemSpell {
@@ -240,7 +238,7 @@ var ItemSpells = {
 			return setInterval( () => { 
 				var currentMana = parent.stats.CurrentMana;
 				var missingMana = parent.stats.ManaPoints.Total() - currentMana;
-				currentMana += percentage( missingMana, 1.5 );
+				currentMana += UTILS.percentage( missingMana, 1.5 );
 				parent.stats.charStats_send();
 			}, 5000 );
 		}
@@ -306,7 +304,6 @@ var ItemSpells = {
 		static spellHash = 0;
 		onAdd( parent ) {
 			parent.stats.Tenacity.PercentBonus += 35;
-			parent.stats.charStats_send();
 		}
 	},
 	TrapDetection: class ItemSpell {
