@@ -1,41 +1,102 @@
 /*
 Actives:
 [
-	"Ghost Ward","Mana Shield",
-	"Crescent","Hunter's Sight",
-	"Bonetooth Totem","Hunter's Ward",
-	"Hunt","Sweeping Lens",
-	"Scrying"
+	"Bonetooth Totem", "Crescent", 
+	"Ghost Ward", "Hunt", 
+	"Hunter's Sight", "Hunter's Ward", 
+	"Mana Shield", "Scrying", 
+	"Sweeping Lens"
 ]
 
 Passives:
 [
-	"Enhanced Movement","Prospector",
-	"Butcher","Ward Refresh",
-	"Point Runner","Mana Charge",
-	"Slow Resist","Valor's Reward",
-	"Icy","Spellblade",
-	"Mana Font","Insight",
-	"Awe","Rage",
-	"Favor","Cleave",
-	"Cold Steel","Tribute",
-	"Greed","Spoils of War",
-	"Maim","Tenacity",
-	"Eyes of Pain","Lifeline",
-	"Trap Detection","Mementos of the Hunt",
-	"Sapping Barbs","Conservation",
-	"Homeguard","Captain",
-	"Furor","Distortion",
-	"Alacrity"
-]*/
+	"Alacrity", "Awe", 
+	"Butcher", "Captain", 
+	"Cleave", "Cold Steel", 
+	"Conservation", "Distortion", 
+	"Enhanced Movement", "Eyes of Pain", 
+	"Favor", "Furor", 
+	"Greed", "Homeguard", 
+	"Icy", "Insight", 
+	"Lifeline", "Maim", 
+	"Mana Charge", "Mana Font", 
+	"Mementos of the Hunt", "Point Runner", 
+	"Prospector", "Rage", 
+	"Sapping Barbs", "Slow Resist", 
+	"Spellblade", "Spoils of War", 
+	"Tenacity", "Trap Detection", 
+	"Tribute", "Valor's Reward", 
+	"Ward Refresh"
+]
+*/
 
 const events = require('./Utilities/events.js');
 
+const percentage = ( number, per ) => { return ( number / 100 ) * per }
+
 var ItemSpells = {
-	Alacrity: class ItemSpell {
+	// Actives
+	BonetoothTotem: class ItemSpell {
 		static spellHash = 0;
 		onUse(target = undefined) {
 
+		}
+	},
+	Crescent: class ItemSpell {
+		static spellHash = 0;
+		onUse(target = undefined) {
+
+		}
+	},
+	GhostWard: class ItemSpell {
+		static spellHash = 0;
+		onUse(target = undefined) {
+
+		}
+	},
+	Hunt: class ItemSpell {
+		static spellHash = 0;
+		onUse(target = undefined) {
+
+		}
+	},
+	HunterSight: class ItemSpell {
+		static spellHash = 0;
+		onUse(target = undefined) {
+
+		}
+	},
+	HunterWard: class ItemSpell {
+		static spellHash = 0;
+		onUse(target = undefined) {
+
+		}
+	},
+	ManaShield: class ItemSpell {
+		static spellHash = 0;
+		onUse(target = undefined) {
+
+		}
+	},
+	Scrying: class ItemSpell {
+		static spellHash = 0;
+		onUse(target = undefined) {
+
+		}
+	},
+	SweepingLens: class ItemSpell {
+		static spellHash = 0;
+		onUse(target = undefined) {
+
+		}
+	},
+	
+	// Passives
+	Alacrity: class ItemSpell {
+		static spellHash = 0;
+		onAdd( parent ) {
+			parent.stats.MoveSpeed.FlatBonus += 20;
+			parent.stats.charStats_send();
 		}
 	},
 	Avarice: class ItemSpell {
@@ -55,8 +116,10 @@ var ItemSpells = {
 	},
 	Awe: class ItemSpell {
 		static spellHash = 0;
-		onUse(target = undefined) {
-
+		onAdd( parent ){
+			var playerManaTotal = parent.stats.ManaPoints.total();
+			parent.stats.AttackDamage.FlatBonus += percentage( playerManaTotal, 2);
+			parent.stats.charStats_send();
 		}
 	},
     Butcher: class ItemSpell {
@@ -83,6 +146,12 @@ var ItemSpells = {
 
 		}
 	},
+	Conservation: class ItemSpell {
+		static spellHash = 0;
+		onUse(target = undefined) {
+
+		}
+	},
 	Distortion: class ItemSpell {
 		static spellHash = 0;
 		onUse(target = undefined) {
@@ -97,8 +166,9 @@ var ItemSpells = {
 	},
     EyesOfPain: class ItemSpell {
 		static spellHash = 0;
-		onUse(target = undefined) {
-
+		onAdd( parent ) {
+			parent.stats.MagicPenetration.FlatBonus += 15;
+			parent.stats.charStats_send();
 		}
 	},
 	Favor: class ItemSpell {
@@ -139,8 +209,10 @@ var ItemSpells = {
 	},
     Insight: class ItemSpell {
 		static spellHash = 0;
-		onUse(target = undefined) {
-
+		onAdd( parent ){
+			var playerManaTotal = parent.stats.ManaPoints.total();
+			parent.stats.AbilityPower.FlatBonus += percentage( playerManaTotal, 2);
+			parent.stats.charStats_send();
 		}
 	},
 	Lifeline: class ItemSpell {
@@ -163,9 +235,18 @@ var ItemSpells = {
 	},
 	ManaFont: class ItemSpell {
 		static spellHash = 0;
-		onUse(target = undefined) {
-
+		effect = ( parent ) => {
+			//setTimeout()
+			return setInterval( () => { 
+				var currentMana = parent.stats.CurrentMana;
+				var missingMana = parent.stats.ManaPoints.Total() - currentMana;
+				currentMana += percentage( missingMana, 1.5 );
+				parent.stats.charStats_send();
+			}, 15000 );
 		}
+		onAdd( parent ){
+			this.timeoutID = this.effect( parent );
+        }
 	},
 	MementosOfTheHunt: class ItemSpell {
 		static spellHash = 0;
@@ -197,6 +278,12 @@ var ItemSpells = {
 
 		}
 	},
+	SlowResist: class ItemSpell {
+		static spellHash = 0;
+		onUse(target = undefined) {
+
+		}
+	},
 	Spellblade: class ItemSpell {
 		static spellHash = 0;
 		onUse(target = undefined) {
@@ -217,8 +304,9 @@ var ItemSpells = {
 	},
 	Tenacity: class ItemSpell {
 		static spellHash = 0;
-		onUse(target = undefined) {
-
+		onAdd( parent ) {
+			parent.stats.Tenacity.PercentBonus += 35;
+			parent.stats.charStats_send();
 		}
 	},
 	TrapDetection: class ItemSpell {

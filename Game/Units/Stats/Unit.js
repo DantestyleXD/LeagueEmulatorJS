@@ -33,6 +33,9 @@ class StatsUnit {
 		this.SpellVamp = new IStat(defaultValues.SpellVamp || 0);
 		this.Tenacity = new IStat(defaultValues.Tenacity || 0);
 
+		this.ArmorPenetration = new IStat(defaultValues.ArmorPenetration || 0);
+		this.MagicPenetration = new IStat(defaultValues.MagicPenetration || 0);
+
 		this.HealthPoints = new IStat(defaultValues.HealthPoints || 400);
 		this.ManaPoints = new IStat(defaultValues.ManaPoints || 300);
 		this.CurrentHealth = this.HealthPoints.Total;
