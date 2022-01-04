@@ -242,7 +242,7 @@ var ItemSpells = {
 				var missingMana = parent.stats.ManaPoints.Total() - currentMana;
 				currentMana += percentage( missingMana, 1.5 );
 				parent.stats.charStats_send();
-			}, 15000 );
+			}, 5000 );
 		}
 		onAdd( parent ){
 			this.timeoutID = this.effect( parent );
