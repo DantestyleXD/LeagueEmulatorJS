@@ -83,7 +83,7 @@ class Player extends Unit {
 		super(team, num, characterName, config);
 
 		//this.character = character;
-		this.summonerSpells = new SpellsSummoner(this, 'SummonerHeal', 'SummonerFlash');
+		this.summonerSpells = new SpellsSummoner(this, 'SummonerExhaust', 'SummonerHaste');
 		this.Movement = new Movement(this);
 		
 	}
@@ -273,7 +273,7 @@ class Player extends Unit {
 			ScriptScale: 1,
 		};
 
-		var ownerPositionCC = TranslateCenteredCoordinates.to([this.Movement.position])[0];
+		var ownerPositionCC = TranslateCenteredCoordinates.to([this.position])[0];
 		var targetPositionCC = target ? TranslateCenteredCoordinates.to([target.position])[0] : ownerPositionCC;
 		targetPositionCC.z = 0;// don't know if it's necessary to set z
 		ownerPositionCC.z = 50;

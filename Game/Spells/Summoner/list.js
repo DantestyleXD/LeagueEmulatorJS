@@ -1,6 +1,6 @@
 const { Vector2 } = require('three');
 const _Summoner = require('./_Summoner');
-
+const BuffTypes = require('../../../Constants/BuffTypes');
 
 class SummonerBarrier extends _Summoner {// Barrier
 	spellHash = 214940034;
@@ -25,6 +25,14 @@ class SummonerClairvoyance extends _Summoner {// Clairvoyance
 }
 class SummonerDot extends _Summoner {// Ignite
 	spellHash = 104222500;
+	effect = {
+		Base: 75,
+		PerLevel: 15,
+	};
+	buff = {
+		BuffType: BuffTypes.DAMAGE,
+		Duration: 5,
+	};
 	cast(packet){
 		super.cast(packet);
 
@@ -32,6 +40,17 @@ class SummonerDot extends _Summoner {// Ignite
 }
 class SummonerExhaust extends _Summoner {// Exhaust
 	spellHash = 145275620;
+	effect = {
+		MovementSpeed: { PercentBonus : 3 },
+		AttackSpeed: { PercentBonus : 3 },
+		Armor: { FlatBonus : 10 },
+		MagicResist: { FlatBonus: 10 },
+		PerLevel: 15,
+	};
+	buff = {
+		BuffType: BuffTypes.COMBAT_DEHANCER,
+		Duration: 5,
+	};
 	cast(packet){
 		super.cast(packet);
 
@@ -48,6 +67,14 @@ class SummonerFlash extends _Summoner {// Flash
 }
 class SummonerHaste extends _Summoner {// Ghost
 	spellHash = 105565333;
+	effect = {
+		Base: 75,
+		PerLevel: 15,
+	};
+	buff = {
+		BuffType: BuffTypes.HASTE,
+		Duration: 5,
+	};
 	cast(packet){
 		super.cast(packet);
 
@@ -63,13 +90,16 @@ class SummonerHeal extends _Summoner {// Heal
 		PerLevel: 15,
 	};
 	buff = {
-		BuffType: 14,
+		BuffType: BuffTypes.HEAL,
 		Duration: 5,
 	};
 	cast(packet){
 		super.cast(packet);
 
 		var source = this.parent.parent;
+
+		source.AddParticleTarget( this.PackageHash, "global_ss_heal_02.troy", null, source );
+		source.AddParticleTarget( this.PackageHash, "global_ss_heal_speedboost.troy", null, source );
 		source.battle.heal((this.effect.Base + (source.stats.Level * this.effect.PerLevel)) / (1 + source.buffController.hasBuffC(this)));
 		source.buffController.addBuffC(this);
 	}
@@ -100,6 +130,14 @@ class SummonerMana extends _Summoner {// Clarity
 //}
 class SummonerRevive extends _Summoner {// Revive
 	spellHash = 97039269;
+	effect = {
+		MovementSpeed: { PercentBonus: 1.25 },
+		PerLevel: 15,
+	};
+	buff = {
+		BuffType: BuffTypes.HASTE,
+		Duration: 5,
+	};
 	cast(packet){
 		super.cast(packet);
 

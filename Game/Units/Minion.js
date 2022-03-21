@@ -8,7 +8,7 @@ const Movement = require('./Controllers/Movement');
 var lanePaths = {
 	BLUE: [
 		[
-			new Vector2(917, 1725),
+			new Vector2(1153.4340, 1897.3438),
 			new Vector2(1170, 4041),
 			new Vector2(861, 6459),
 			new Vector2(880, 10180),
@@ -21,7 +21,7 @@ var lanePaths = {
 			new Vector2(12511, 12776)
 		],
 		[
-			new Vector2(1418, 1686),
+			new Vector2(1437.4340, 1691.3438),
 			new Vector2(2997, 2781),
 			new Vector2(4472, 4727),
 			new Vector2(8375, 8366),
@@ -29,7 +29,7 @@ var lanePaths = {
 			new Vector2(12511, 12776)
 		],
 		[
-			new Vector2(1487, 1302),
+			new Vector2(1647.4340, 1333.3438),
 			new Vector2(3789, 1346),
 			new Vector2(6430, 1005),
 			new Vector2(10995, 1234),

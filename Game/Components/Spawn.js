@@ -22,6 +22,25 @@ async function wait_spawnMinions(){
 	}
 }
 
+async function wait_spawnMonsters(){
+	var spawnMonsters_next = global.Game.started + 11.0;
+	var spawnMonsters_count = 0;
+
+	for(;;){
+		await global.Utilities.wait(10);
+		while(spawnMonsters_next > Date.now() / 1000)
+			continue;
+
+		spawnMonsters_next = Date.now() / 1000 + 3.0;
+		spawnMonsters(++spawnMonsters_count);
+	}
+}
+
+async function wait_spawnUnits(){
+	await wait_spawnMinions();
+	await wait_spawnMonsters()
+}
+
 //async function spawnMonsters(spawnMinions_count){
 //	console.log('Monsters spawn - wave', spawnMinions_count);
 //
@@ -45,6 +64,6 @@ async function wait_spawnMinions(){
 
 module.exports = async() => {
 
-	wait_spawnMinions();
+	wait_spawnUnits();
 
 };

@@ -8,9 +8,9 @@ module.exports = {
 			BLUE: {//ORDER
 				id: 100,
 				spawn: [
-					{position: {x: 25.9, y: 280}, rotation: 0},
-					{position: {x: 25.9, y: 280}, rotation: 0},
-					{position: {x: 25.9, y: 280}, rotation: 0},
+					{position: {x: 1153.4340, y: 1897.3438}, rotation: 0},
+					{position: {x: 1437.4340, y: 1691.3438}, rotation: 0},
+					{position: {x: 1647.4340, y: 1333.3438}, rotation: 0},
 					{position: {x: 25.9, y: 280}, rotation: 0},
 					{position: {x: 25.9, y: 280}, rotation: 0},
 					{position: {x: 25.9, y: 280}, rotation: 0},

@@ -56,6 +56,19 @@ module.exports = (player, packet) => {
 				//.debugMode [<debugLevel(0/1)>] :: turning off/on debug mode (debug logs)
 			chatBoxMessage(player, message.split('\t\t').join(' '));
 		}
+		else if(commandArgs[0] === 'spawn'){
+			const Jungle = require("../Game/Units/Jungle");
+			debugger;
+			if( commandArgs.length > 1 )
+			{
+				let mapSide = commandArgs[1].toUpperCase();
+				let camp = commandArgs[2].toUpperCase();
+				let spawn = new Jungle( mapSide, camp )
+			
+			}
+				debugger;
+
+		}
 		else if(commandArgs[0] === 'q'){
 			for(let i = parseInt(commandArgs[1] || 1); i > 0; i--){
 				global.Barracks['BLUE'][0].spawnUnit('Basic');

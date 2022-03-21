@@ -2,7 +2,7 @@
 module.exports = class SpellsSummoner {
 	static list = require("./list");
 
-    constructor(parent, spellName1 = 'SummonerHeal', spellName2 = 'SummonerFlash'){
+    constructor(parent, spellName1 /*= 'SummonerHeal'*/, spellName2 /*= 'SummonerFlash'*/){
 		this.parent = parent;
 
         this.spells = {
